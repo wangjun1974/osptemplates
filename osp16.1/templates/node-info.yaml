@@ -1,0 +1,12 @@
+parameter_defaults:
+  ControllerCount: 3
+  ComputeCount: 2
+  CephStorageCount: 3
+
+  # SchedulerHints
+  ControllerSchedulerHints:
+    'capabilities:node': 'controller-%index%'
+  ComputeSchedulerHints:
+    'capabilities:node': 'compute-%index%'
+  CephStorageSchedulerHints:
+    'capabilities:node': 'cephstorage-%index%'
