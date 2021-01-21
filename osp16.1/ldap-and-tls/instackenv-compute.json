@@ -1,0 +1,26 @@
+{
+  "nodes": [
+    {
+      "mac": [
+        "52:54:00:10:84:ab"
+      ],
+      "name": "overcloud-compute01",
+      "pm_addr": "192.168.1.4",
+      "pm_port": "623",
+      "pm_password": "redhat",
+      "pm_type": "pxe_ipmitool",
+      "pm_user": "admin"
+    },
+    {
+      "mac": [
+        "52:54:00:ca:d7:a3"
+      ],
+      "name": "overcloud-compute02",
+      "pm_addr": "192.168.1.5",
+      "pm_port": "623",
+      "pm_password": "redhat",
+      "pm_type": "pxe_ipmitool",
+      "pm_user": "admin"
+    }
+  ]
+}
