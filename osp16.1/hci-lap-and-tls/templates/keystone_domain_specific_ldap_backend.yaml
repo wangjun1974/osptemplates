@@ -1,0 +1,16 @@
+parameter_defaults:
+  KeystoneLDAPDomainEnable: true
+  KeystoneLDAPBackendConfigs:
+    helper:
+      url: ldap://192.168.122.3
+      user: uid=admin,cn=users,cn=compat,dc=example,dc=com
+      password: redhat123
+      suffix: dc=example,dc=com
+      user_tree_dn: cn=users,cn=accounts,dc=example,dc=com
+      user_filter: ""
+      user_objectclass: person
+      user_id_attribute: uid
+      user_name_attribute: uid
+      user_allow_create: false
+      user_allow_update: false
+      user_allow_delete: false

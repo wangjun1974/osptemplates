@@ -1,0 +1,68 @@
+# *******************************************************************
+# This file was created automatically by the sample environment
+# generator. Developers should use `tox -e genconfig` to update it.
+# Users are recommended to make changes to a copy of the file instead
+# of the original, if any customizations are needed.
+# *******************************************************************
+# title: Inject SSL Trust Anchor on Overcloud Nodes
+# description: |
+#   When using an SSL certificate signed by a CA that is not in the default
+#   list of CAs, this environment allows adding a custom CA certificate to
+#   the overcloud nodes.
+parameter_defaults:
+  # The content of a CA's SSL certificate file in PEM format. This is evaluated on the client side.
+  # Mandatory. This parameter must be set by the user.
+  # Type: string
+  SSLRootCertificate: |
+    -----BEGIN CERTIFICATE-----
+    MIIDtzCCAp+gAwIBAgIUBcm8E+wHKn7w9luHiZcr2hIldbEwDQYJKoZIhvcNAQEL
+    BQAwazELMAkGA1UEBhMCVVMxCzAJBgNVBAgMAk5DMRAwDgYDVQQHDAdSYWxlaWdo
+    MRAwDgYDVQQKDAdSZWQgSGF0MQswCQYDVQQLDAJRRTEeMBwGA1UEAwwVb3ZlcmNs
+    b3VkLmV4YW1wbGUuY29tMB4XDTIxMDEyMDA5MjExMFoXDTIyMDEyMDA5MjExMFow
+    azELMAkGA1UEBhMCVVMxCzAJBgNVBAgMAk5DMRAwDgYDVQQHDAdSYWxlaWdoMRAw
+    DgYDVQQKDAdSZWQgSGF0MQswCQYDVQQLDAJRRTEeMBwGA1UEAwwVb3ZlcmNsb3Vk
+    LmV4YW1wbGUuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvC3i
+    awOHTQbyABc7l3jmNCRh6DdhZaL/93PKJDs3KHIm6NdX/qR+AjN28jiMxoIWonCZ
+    znSUAc8ots9OIijGQKg8WJJf0O216L7i2JWv3xqDxHBnBFV6FIvPQ3mqRPfADnxa
+    MSbaxIJKosFrb/m8yKbqipDK2dxfxWY2XzfpKYZnoop9Jpdmm911R7ezqYx6ZFUw
+    lKtKZhrv3FlcGd/55lewRZM3IlNJWocWVv8G2H4cDp5XtJVFvyR1H8WiKeqL98Ry
+    rktlcHCeSzcL9LaRr65VY4S6YLqsviSuXfRMQm60srkPGt+st0L1MTnrOcfv9mV7
+    B1TV0IOh1+EjhMiAJQIDAQABo1MwUTAdBgNVHQ4EFgQULVqX5ByriKyLTgW4VWWN
+    c21FQdQwHwYDVR0jBBgwFoAULVqX5ByriKyLTgW4VWWNc21FQdQwDwYDVR0TAQH/
+    BAUwAwEB/zANBgkqhkiG9w0BAQsFAAOCAQEASd7q8jfTEDsfHCdr+oXmb3c/thnv
+    sR/BefCpDRStBMUuOzXB7kdBDQ6D+G35u5OtFL/mFfEu+DKIpVJoJ4Dv4K311Mtw
+    demc8cOAKEKSNvsALS9muYxF72E3O+NluBHxCR5eUPW4lBPxCBFWbyrifAulMaTW
+    sFv4y9nRKnpeeXVqSf+/vLwQTmrKsdx7PsFIzpGuXfCTBQ4PlYPMBNQ1h+8GTmuo
+    iXRbKO1nWGL8/eDgkbd6/ItFFOFSqpubHGrLW1A7l9a7tJEz9u3YjuBFBq/KsqNO
+    XR3D6R9XSCfHSvLsKLuQEkjCZduq2PqjK+wkrB/xRjDf9aMh3zsT4U8vwQ==
+    -----END CERTIFICATE-----
+    -----BEGIN CERTIFICATE-----
+    MIIEizCCAvOgAwIBAgIBATANBgkqhkiG9w0BAQsFADA2MRQwEgYDVQQKDAtFWEFN
+    UExFLkNPTTEeMBwGA1UEAwwVQ2VydGlmaWNhdGUgQXV0aG9yaXR5MB4XDTIxMDEy
+    MDA4MDAwOVoXDTQxMDEyMDA4MDAwOVowNjEUMBIGA1UECgwLRVhBTVBMRS5DT00x
+    HjAcBgNVBAMMFUNlcnRpZmljYXRlIEF1dGhvcml0eTCCAaIwDQYJKoZIhvcNAQEB
+    BQADggGPADCCAYoCggGBAN0d1Zye+GJNNndYWw2X57f0lRv2z4NlffZ1vGZTMU05
+    XZO2mub2r2TBCTpFFEcrvfIemdzqNs02O3Dfr+5Gib5lP8HtZgS4PynRFQMyshPQ
+    iPExKAi1xMUrqKaRJ+ojiHN0qmWcLQCa0cIfHY/zArYpYi9Y1k3jW5VTzmiyiuPD
+    wDap/M914VmxsW5ry5JbCifxXWOTDmDm03TeXCKdMU9+sJwpYUZQDZNgCsoCO9Pv
+    UPtoaI7nuxaeRKVelq9b4CsuA2yhuyJObqYjKqwiA2XTaaP77OAOlzJZEFmUBA/9
+    wyFeXs1Z+dTeYe56A29m1L1kt0tuaZOWLpDAm6DCh3lGL8h8SCAKYHL0NTDTV5K2
+    EbdjSR3ujkQ2c5aPTnk17SiGJWyf/B+ah0O5wLXQST0zgP+sKEXqqkKTk7bpV69V
+    i/1yv+VbZM+AkzkjJPIqkyWjRioE/S4m00m6vEIDEoPuXsb+zApDUPFCUI1++4Ge
+    L3abLygaWrjcynJclgQjuwIDAQABo4GjMIGgMB8GA1UdIwQYMBaAFLA4PKSpNl+v
+    MdICBYOBHIulNkOLMA8GA1UdEwEB/wQFMAMBAf8wDgYDVR0PAQH/BAQDAgHGMB0G
+    A1UdDgQWBBSwODykqTZfrzHSAgWDgRyLpTZDizA9BggrBgEFBQcBAQQxMC8wLQYI
+    KwYBBQUHMAGGIWh0dHA6Ly9pcGEtY2EuZXhhbXBsZS5jb20vY2Evb2NzcDANBgkq
+    hkiG9w0BAQsFAAOCAYEAuS9XRKloY65qsshyAdByOR6rCslrign4kNMIhBozYJOn
+    7E5TVttr9kiBsHM0YewZCAVjyEFXFb0iM2dne8RgCuj+WKtaWX+40DflojWL0Naj
+    +d9ROMcPPub7Lzouyop+ZDHBizDVyjMqimGCXv4NLtLpe00RJqOUDrQMBKZMgTMh
+    TBfizJsrtCeKKbD7sDCRODGO7u6P8HnwJNKPxr7CRjHNl8YTvKCNNaMb8LIQuF+2
+    /zQG7PmOKrzuQ/E3z3tKPgM/kmIngIjvO8+7aLfCp/2yYpYy/rZGiXARYFzkCwrF
+    DypXXb6rhHSYVlE7QGxseHiisJaSsCYxkb3dFE3lgCfTM01HypVkuseB2GSyVgPp
+    307UfC4FJXR1HLReNQFwYNkarASQUO3U5MhjgC0GjLekQgHBRQFL8SqWiVtp5/bK
+    6cKxvfyrktq89/jZd2nHjfg+qedGsjVYYc4eo37DgoSPi7Q+vgQIKhjHeDCeriwQ
+    4dAgssDSsgFfEVQQCY70
+    -----END CERTIFICATE-----
+
+resource_registry:
+  OS::TripleO::NodeTLSCAData: /usr/share/openstack-tripleo-heat-templates/puppet/extraconfig/tls/ca-inject.yaml

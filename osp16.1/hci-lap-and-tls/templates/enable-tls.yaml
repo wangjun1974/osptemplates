@@ -1,0 +1,92 @@
+# *******************************************************************
+# This file was created automatically by the sample environment
+# generator. Developers should use `tox -e genconfig` to update it.
+# Users are recommended to make changes to a copy of the file instead
+# of the original, if any customizations are needed.
+# *******************************************************************
+# title: Enable SSL on OpenStack Public Endpoints
+# description: |
+#   Use this environment to pass in certificates for SSL deployments.
+#   For these values to take effect, one of the tls-endpoints-*.yaml
+#   environments must also be used.
+parameter_defaults:
+  # Set CSRF_COOKIE_SECURE / SESSION_COOKIE_SECURE in Horizon
+  # Type: boolean
+  HorizonSecureCookies: True
+
+  # Specifies the default CA cert to use if TLS is used for services in the public network.
+  # Type: string
+  PublicTLSCAFile: '/etc/pki/ca-trust/source/anchors/ca.crt.pem'
+
+  # The content of the SSL certificate (without Key) in PEM format.
+  # Type: string
+  SSLCertificate: |
+    -----BEGIN CERTIFICATE-----
+    MIIDtzCCAp+gAwIBAgIUBcm8E+wHKn7w9luHiZcr2hIldbEwDQYJKoZIhvcNAQEL
+    BQAwazELMAkGA1UEBhMCVVMxCzAJBgNVBAgMAk5DMRAwDgYDVQQHDAdSYWxlaWdo
+    MRAwDgYDVQQKDAdSZWQgSGF0MQswCQYDVQQLDAJRRTEeMBwGA1UEAwwVb3ZlcmNs
+    b3VkLmV4YW1wbGUuY29tMB4XDTIxMDEyMDA5MjExMFoXDTIyMDEyMDA5MjExMFow
+    azELMAkGA1UEBhMCVVMxCzAJBgNVBAgMAk5DMRAwDgYDVQQHDAdSYWxlaWdoMRAw
+    DgYDVQQKDAdSZWQgSGF0MQswCQYDVQQLDAJRRTEeMBwGA1UEAwwVb3ZlcmNsb3Vk
+    LmV4YW1wbGUuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvC3i
+    awOHTQbyABc7l3jmNCRh6DdhZaL/93PKJDs3KHIm6NdX/qR+AjN28jiMxoIWonCZ
+    znSUAc8ots9OIijGQKg8WJJf0O216L7i2JWv3xqDxHBnBFV6FIvPQ3mqRPfADnxa
+    MSbaxIJKosFrb/m8yKbqipDK2dxfxWY2XzfpKYZnoop9Jpdmm911R7ezqYx6ZFUw
+    lKtKZhrv3FlcGd/55lewRZM3IlNJWocWVv8G2H4cDp5XtJVFvyR1H8WiKeqL98Ry
+    rktlcHCeSzcL9LaRr65VY4S6YLqsviSuXfRMQm60srkPGt+st0L1MTnrOcfv9mV7
+    B1TV0IOh1+EjhMiAJQIDAQABo1MwUTAdBgNVHQ4EFgQULVqX5ByriKyLTgW4VWWN
+    c21FQdQwHwYDVR0jBBgwFoAULVqX5ByriKyLTgW4VWWNc21FQdQwDwYDVR0TAQH/
+    BAUwAwEB/zANBgkqhkiG9w0BAQsFAAOCAQEASd7q8jfTEDsfHCdr+oXmb3c/thnv
+    sR/BefCpDRStBMUuOzXB7kdBDQ6D+G35u5OtFL/mFfEu+DKIpVJoJ4Dv4K311Mtw
+    demc8cOAKEKSNvsALS9muYxF72E3O+NluBHxCR5eUPW4lBPxCBFWbyrifAulMaTW
+    sFv4y9nRKnpeeXVqSf+/vLwQTmrKsdx7PsFIzpGuXfCTBQ4PlYPMBNQ1h+8GTmuo
+    iXRbKO1nWGL8/eDgkbd6/ItFFOFSqpubHGrLW1A7l9a7tJEz9u3YjuBFBq/KsqNO
+    XR3D6R9XSCfHSvLsKLuQEkjCZduq2PqjK+wkrB/xRjDf9aMh3zsT4U8vwQ==
+    -----END CERTIFICATE-----
+
+  # The content of an SSL intermediate CA certificate in PEM format.
+  # Type: string
+  SSLIntermediateCertificate: ''
+
+  # The content of the SSL Key in PEM format.
+  # Type: string
+  SSLKey: |
+    -----BEGIN RSA PRIVATE KEY-----
+    MIIEpAIBAAKCAQEAvC3iawOHTQbyABc7l3jmNCRh6DdhZaL/93PKJDs3KHIm6NdX
+    /qR+AjN28jiMxoIWonCZznSUAc8ots9OIijGQKg8WJJf0O216L7i2JWv3xqDxHBn
+    BFV6FIvPQ3mqRPfADnxaMSbaxIJKosFrb/m8yKbqipDK2dxfxWY2XzfpKYZnoop9
+    Jpdmm911R7ezqYx6ZFUwlKtKZhrv3FlcGd/55lewRZM3IlNJWocWVv8G2H4cDp5X
+    tJVFvyR1H8WiKeqL98RyrktlcHCeSzcL9LaRr65VY4S6YLqsviSuXfRMQm60srkP
+    Gt+st0L1MTnrOcfv9mV7B1TV0IOh1+EjhMiAJQIDAQABAoIBAQCjfc4IocEsmAsr
+    LwQ0PvLqfG2f3nW9Yxe2eyA1yEjM2BicFXQ7JdjguqvuGFmeoileKixHJhvtUnmS
+    EpxUq05LoJ8FaO7cS5rPQwE9oRdy48t1oR6vsj/ll+6UNiFL2GBBdaK6r4JEVtrX
+    euqIF9cAEZ0WlGPZUlDW5U35/k6SJtelxWaHOyJZXjbc/VfWJmLdRuoG7l+75VBr
+    4DbGRpGiGl0aUc0ZkIi+o/36ZP9DyygJMBIKySskZeOvzSuCxpE7WjC1hZdIUDtV
+    GA9nPljv1PHAKBFxVCS3f2xRF9x/HizlNTML7pmecAxgQZ11fSwa4zTbDNDyvaHz
+    C2+PeUQBAoGBAPJFRWvNymTsHOcFdCSn716tK2W8luPBAI0lh5avtLlskMl/z7AR
+    ROO6Etn4T6LVoRLiKnK/Y8N/6EHbFHNYKCgbQiwrpwXl6wDhXbRMqdjl8c75lWxp
+    GRfTUZBHDbT5TlP88dVPbn0jATGlsnYIIGAAwNkRmpw7j3FSWiMUAlsBAoGBAMbX
+    4rTg5Jg+P0MVinZCBLp6Bcllo+OaJocppTnYsYyJYyEAjMgtN3HGN6vf2PL33BaD
+    CE/lkHBAVifQVdOSjuNOdGHkeqMpdq9laytR02WB0FYjrjQmNkZHVsxilhYzL/Fo
+    rNr315SniGyoXwtOqP+XaMFsCIBAqfvaGJuUzlklAoGAOivX12K6TjFDX1U35fVM
+    zHbYDL2TnWwiLcHtJIlb44nl2fwOakA7QlLTY/LzbC3PVzFm79Z0peR4aBeqeWeZ
+    fMfOw7xXhlsGaleyoDAoOCQ+Q2w6LKWvmMDsvK/S4rlZzWDW0FkaNoHJL5qRlzWs
+    UGDd7UEE1q6WaqdTbUjIqAECgYAwWQevkUsj1WbOaetry6uYp9jGWmdaDP43OSIK
+    iazKDhHDUX3pokzr5hVdPiVjFm82LhAUVS4kjRAlyBtGQUlq7YWQ09wZ1hgcl51S
+    QCgVc1Xzy+MsnOnvdqMdOQ9jQHj0ys3UxBRv+bhLKzlI54xh8S+wcBM1FAQAz8vR
+    8IGn3QKBgQCt0jCCm3QJPqXbwEB7M4l24AXMpCG4j5i3Tvy9w4BiojVQxfIVUg6f
+    T9CuVUfDjJZGFse8bRGqd2x/reLzYoFKwb0FQUyoNhXSRMh1IXoHxYy+xCablGlv
+    7FkD8KZhI3QLzdj5NeSfjht1MfkCG+TzAoP4qEVB9GOKZ982IoGyvw==
+    -----END RSA PRIVATE KEY-----
+
+  # ******************************************************
+  # Static parameters - these are values that must be
+  # included in the environment but should not be changed.
+  # ******************************************************
+  # The filepath of the certificate as it will be stored in the controller.
+  # Type: string
+  DeployedSSLCertificatePath: /etc/pki/tls/private/overcloud_endpoint.pem
+
+  # *********************
+  # End static parameters
+  # *********************
