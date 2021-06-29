@@ -1,0 +1,11 @@
+parameter_defaults:
+  CephConfigOverrides:
+    mon_max_pg_per_osd: 450
+  CephAnsibleDisksConfig:
+    devices:
+      - /dev/sdb
+      - /dev/sdc
+      - /dev/sdd
+      - /dev/sde
+    osd_scenario: lvm
+    osd_objectstore: bluestore

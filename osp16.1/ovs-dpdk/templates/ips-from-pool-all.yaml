@@ -1,0 +1,81 @@
+resource_registry:
+  OS::TripleO::Network::Ports::RedisVipPort: /usr/share/openstack-tripleo-heat-templates/network/ports/noop.yaml
+  OS::TripleO::Network::Ports::ExternalVipPort: /usr/share/openstack-tripleo-heat-templates/network/ports/external.yaml
+  OS::TripleO::Network::Ports::InternalApiVipPort:  /usr/share/openstack-tripleo-heat-templates/network/ports/internal_api.yaml
+  OS::TripleO::Network::Ports::StorageVipPort:  /usr/share/openstack-tripleo-heat-templates/network/ports/storage.yaml
+  OS::TripleO::Network::Ports::StorageMgmtVipPort: /usr/share/openstack-tripleo-heat-templates/network/ports/storage_mgmt.yaml
+  OS::TripleO::Network::Ports::OVNDBsVipPort:  /usr/share/openstack-tripleo-heat-templates/network/ports/vip.yaml
+
+  OS::TripleO::Controller::Ports::ExternalPort: /usr/share/openstack-tripleo-heat-templates/network/ports/external_from_pool.yaml
+  OS::TripleO::Controller::Ports::InternalApiPort: /usr/share/openstack-tripleo-heat-templates/network/ports/internal_api_from_pool.yaml
+  OS::TripleO::Controller::Ports::StoragePort: /usr/share/openstack-tripleo-heat-templates/network/ports/storage_from_pool.yaml
+  OS::TripleO::Controller::Ports::StorageMgmtPort: /usr/share/openstack-tripleo-heat-templates/network/ports/noop.yaml
+  OS::TripleO::Controller::Ports::TenantPort: /usr/share/openstack-tripleo-heat-templates/network/ports/tenant_from_pool.yaml
+
+  OS::TripleO::ComputeOvsDpdk::Ports::ExternalPort: /usr/share/openstack-tripleo-heat-templates/network/ports/noop.yaml
+  OS::TripleO::ComputeOvsDpdk::Ports::InternalApiPort: /usr/share/openstack-tripleo-heat-templates/network/ports/internal_api_from_pool.yaml
+  OS::TripleO::ComputeOvsDpdk::Ports::StoragePort: /usr/share/openstack-tripleo-heat-templates/network/ports/storage_from_pool.yaml
+  OS::TripleO::ComputeOvsDpdk::Ports::StorageMgmtPort: /usr/share/openstack-tripleo-heat-templates/network/ports/noop.yaml
+  OS::TripleO::ComputeOvsDpdk::Ports::TenantPort: /usr/share/openstack-tripleo-heat-templates/network/ports/tenant_from_pool.yaml
+
+  OS::TripleO::Compute::Ports::ExternalPort: /usr/share/openstack-tripleo-heat-templates/network/ports/noop.yaml
+  OS::TripleO::Compute::Ports::InternalApiPort: /usr/share/openstack-tripleo-heat-templates/network/ports/internal_api_from_pool.yaml
+  OS::TripleO::Compute::Ports::StoragePort: /usr/share/openstack-tripleo-heat-templates/network/ports/storage_from_pool.yaml
+  OS::TripleO::Compute::Ports::StorageMgmtPort: /usr/share/openstack-tripleo-heat-templates/network/ports/noop.yaml
+  OS::TripleO::Compute::Ports::TenantPort: /usr/share/openstack-tripleo-heat-templates/network/ports/tenant_from_pool.yaml
+
+
+parameter_defaults:
+  ControllerIPs:
+    # Each controller will get an IP from the lists below, first controller, first IP
+    external:
+    - 10.72.51.129
+    - 10.72.51.130
+    - 10.72.51.131
+    internal_api:
+    - 10.72.51.225
+    - 10.72.51.226
+    - 10.72.51.227
+    storage:
+    - 10.72.51.193
+    - 10.72.51.194
+    - 10.72.51.195
+    tenant:
+    - 10.72.52.1
+    - 10.72.52.2
+    - 10.72.52.3
+    storage_mgmt:
+    - 10.72.51.161
+    - 10.72.51.162
+    - 10.72.51.163
+  
+  ComputeOvsDpdkIPs:
+    internal_api:
+    - 10.72.51.228
+    - 10.72.51.229
+    storage:
+    - 10.72.51.196
+    - 10.72.51.197
+    tenant:
+    - 10.72.52.4
+    - 10.72.52.5
+
+  ComputeIPs:
+    internal_api:
+    - 10.72.51.230
+    - 10.72.51.231
+    storage:
+    - 10.72.51.198
+    - 10.72.51.199
+    tenant:
+    - 10.72.52.6
+    - 10.72.52.7
+
+parameter_defaults:
+  # Set the IP addresses of the VIPs here.
+  # NOTE: we will eventually move to one VIP per service
+  PublicVirtualFixedIPs: [{'ip_address':'10.72.51.135'}]
+  InternalApiVirtualFixedIPs: [{'ip_address':'10.72.51.235'}]
+  StorageVirtualFixedIPs: [{'ip_address':'10.72.51.200'}]
+  RedisVirtualFixedIPs: [{'ip_address':'10.72.51.236'}]
+  StorageMgmtVirtualFixedIPs: [{'ip_address':'10.72.51.165'}]

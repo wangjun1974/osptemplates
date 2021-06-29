@@ -1,0 +1,11 @@
+resource_registry:
+  OS::TripleO::Network::Ports::ExternalVipPort: /usr/share/openstack-tripleo-heat-templates/network/ports/external.yaml
+  OS::TripleO::Controller::Ports::ExternalPort: /usr/share/openstack-tripleo-heat-templates/network/ports/external_from_pool.yaml
+
+parameter_defaults:
+  PublicVirtualFixedIPs: [{'ip_address':'10.72.51.135'}]
+  ControllerIPs:
+    external:
+    - 10.72.51.129
+    - 10.72.51.130
+    - 10.72.51.131
